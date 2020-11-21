@@ -3,7 +3,7 @@ import random
 
 def number_of_days():
     total_days = []
-    for _ in range(1000):
+    for _ in range(10000):
         infection_chance = .1
         total_computers = [0] * 99
         total_computers.append(1)
@@ -33,8 +33,8 @@ def number_of_days():
                 total_days.append(days)
                 break
 
-    print(f'After 1000 trials, the average number of days it takes to '
-          f'fully repair the computers is {sum(total_days) / len(total_days)} days.')
+    print(f'The average number of days it takes to '
+          f'fully repair the computers is approximately {sum(total_days) / len(total_days)} days.')
 
 
 number_of_days()
