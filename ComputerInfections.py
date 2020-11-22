@@ -1,12 +1,13 @@
 import random
+import math
 
 
 def number_of_days():
     total_days = []
     for _ in range(10000):
         infection_chance = .1
-        total_computers = [0] * 99
-        total_computers.append(1)
+        total_computers = [0] * 100
+        total_computers[0] = 1
         days = 0
 
         probabilities = []  # create a list of random probability values
@@ -29,12 +30,12 @@ def number_of_days():
                     if count == 10:  # technician can only repair ten comps
                         break
 
-            if sum(total_computers) < 11:
-                total_days.append(days)
+            if sum(total_computers) <= 10:
+                total_days.append(days + 1)
                 break
 
     print(f'The average number of days it takes to '
-          f'fully repair the computers is approximately {sum(total_days) / len(total_days)} days.')
+          f'fully repair the computers is approximately {math.ceil(sum(total_days) / len(total_days))} days.')
 
 
 number_of_days()
